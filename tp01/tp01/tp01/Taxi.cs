@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tp01
 {
-    public class Taxi : TransportePublico
+    public class Taxi : TransportePublico, IComparable
     {
         public int NumeroDeLicencia { get; set; }
 
@@ -27,8 +27,15 @@ namespace tp01
 
         public override string MostrarInformacion()
         {
-            return $"Taxi {NumTransporte}: {Pasajeros} Pasajeros";
+            return $"Taxi {NumTransporte}: {Pasajeros} Pasajeros | Patente: {Patente} | Numero de licencia: {NumeroDeLicencia}";
         }
+
+        public int CompareTo(object p)
+        {
+            return (p is Omnibus) ? 1 : (p is Taxi) ? this.NumTransporte.CompareTo(((TransportePublico)p).NumTransporte) : 0;
+        }
+
     }
+
 }
 
