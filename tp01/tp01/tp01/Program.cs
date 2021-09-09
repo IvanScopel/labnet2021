@@ -128,10 +128,7 @@ namespace tp01
              
              }
 
-        interface INumerable
-        {
-            int NumTransporte { get; set; }
-        }
+
     }
 }
 
