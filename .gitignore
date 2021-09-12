@@ -348,3 +348,8 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/tp01.transporte
+/tp1
+/tp02/NuevaExcepcion
+/tp02/Logic
+/tp02/ClassLibraryEjemplo
