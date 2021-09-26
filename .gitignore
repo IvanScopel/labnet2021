@@ -348,3 +348,9 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/tp1
+/misc
+/tp02
+/tp04
+/tp05/tp05.Logic
+/tp05/tp04.Logic
