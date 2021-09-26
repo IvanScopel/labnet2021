@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    
+        <link rel="stylesheet" href="style.css" />
+        <script src="validations.js"></script>
+        
+</head>
+<style>
+   input[type=number]{
+    width: 10%;
+    }
+</style>
+<body class="background">
+
+    <section class="sectionForm">
+        <form name="form" id="form" style="width: auto" onsubmit="return validateForm()" >
+            
+            <label>Nombre
+                <input id="name" name="name" type="text"  >
+            </label>
+
+            <label>Apellido
+                <input id="lastname" name="lastname" type="text"  >
+            </label>
+
+            <div>
+                <label>Edad <br>
+                <input id="age" name="age" type="number" min="1" >
+                </label>
+            </div>
+            
+            <div>
+                <label>
+                    <input type="radio" name="gender" value="M">Masculino
+                </label>
+            
+                <label>
+                    <input type="radio" name="gender" value="F">Femenino
+                </label>
+
+                <label>
+                    <input type="radio" name="gender" value="O">Otro
+                </label>
+             </div>
+            <br>
+            <label>Empresa
+                <input placeholder="Campo opcional" name="company" type="text"  />
+            </label>
+        <input class="registerButton createButton" type="submit" value="Submit"/>
+
+        <input class="registerButton resetButton" type="button"  onclick="resetFunction()" value="Reset"/>
+        </form>
+    </section>
+    
+</body>
+</html>

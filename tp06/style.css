@@ -1,0 +1,64 @@
+
+label, span {
+    color: #f1f1f1;
+    text-align: right;
+}
+
+#form {
+  text-align: center;
+  margin-top: 5rem;
+  border-style:groove;
+  border-color: #f1f1f1;
+  
+}
+
+.registerButton{
+  border: none;
+  color: white;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  margin-bottom: 5%;
+}
+
+.createButton{
+  background-color: #008CBA;
+}
+
+.resetButton{
+  background-color: #f44336;
+}
+
+input{
+
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]{
+  width: 90%;
+}
+
+input[type="radio"]{
+  margin: 0 10px 0 10px;
+}
+
+.sectionForm{
+display: flex;
+width: 30%;
+height: auto;
+margin: auto;
+}
+
+.background {
+  background-color:#1f1f1f; 
+}
+
+*{
+  font-family:'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
