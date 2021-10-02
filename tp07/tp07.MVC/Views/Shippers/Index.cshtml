@@ -1,0 +1,45 @@
+﻿@model List<tp07.MVC.Models.ShippersView>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<h2>Vista de Shippers</h2>
+
+@Html.ActionLink("Agregar Shipper", "Insert", "Shippers", null, new { @class = "btn btn-primary btn-large" })
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Company name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Modificar</th>
+            <th scope="col">Borrar</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var shippers in Model)
+        {
+
+            <tr>
+                <th>@shippers.ShipperID</th>
+                <td>@shippers.CompanyName</td>
+                <td>@shippers.Phone</td>
+                <td>
+                    @Html.ActionLink("Modificar Shipper", "Modify", "Shippers", new { id = @shippers.ShipperID }, new { @class = "btn btn-primary btn-large" })
+
+                </td>
+                <td>
+                    @Html.ActionLink("Borrar Shipper", "Delete", "Shippers", new { id = @shippers.ShipperID }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>

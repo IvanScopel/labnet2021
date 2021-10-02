@@ -1,0 +1,47 @@
+﻿@model tp07.MVC.Models.ShippersView
+@{
+    if (Model == null)
+    {
+        ViewBag.Title = "Insert";
+    }
+    else
+    {
+        ViewBag.Title = "Modify";
+
+    }
+
+}
+
+
+@if (Model == null)
+{
+    <h2>Insert</h2>
+}
+else
+{
+    <h2>Modify</h2>
+}
+
+@using (Html.BeginForm("Insert", "Shippers"))
+{
+
+    <div class="form-group">
+        <label class="form-label mb-3">Nombre de la compañia</label>
+        @Html.TextBoxFor(s => s.CompanyName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.CompanyName)
+    </div>
+    <div class="form-group">
+        <label class="form-label">Telefono</label>
+        @Html.TextBoxFor(s => s.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.Phone)
+    </div>
+    @Html.HiddenFor(s => s.ShipperID);
+
+    <input type="submit" class="btn btn-success" value="Guardar">
+}
+
+
+
+
+
+

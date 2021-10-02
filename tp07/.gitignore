@@ -348,19 +348,10 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
-/tp04/tp04.Entities/Territories.cs
-/tp04/tp04.Entities/Suppliers.cs
-/tp04/tp04.Entities/Region.cs
-/tp04/tp04.Entities/Products.cs
-/tp04/tp04.Entities/Order_Details.cs
-/tp04/tp04.Entities/Orders.cs
-/tp04/tp04.Entities/Employees.cs
-/tp04/tp04.Entities/Customers.cs
-/tp04/tp04.Entities/CustomerDemographics.cs
-/tp04/tp04.Logic/ProductsLogic.cs
 /tp02
 /tp1
 /misc
 /tp05
 /tp06
-/tp07/MVC
+/tp04/tp04.Logic
+/tp07
