@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2 style="text-align: center">Ingresa el pokemon que quieras buscar</h2>
+
+
+@using (Html.BeginForm("Index", "Pokeapi"))
+{
+
+    <label for="name" class="form-label mb-3">Nombre</label>
+    <input class="form-control" type="text" id="name" name="name">
+
+    <input type="submit" class="btn btn-success" value="Guardar">
+
+}

@@ -17,7 +17,7 @@ namespace tp07.MVC.Controllers
 
         public ActionResult Index()
         {
-            List<tp04.Entities.Shippers> shippers = shippersLogic.GetAll();
+            List<Shippers> shippers = shippersLogic.GetAll();
 
             List<ShippersView> shippersViews = shippers.Select(s => new ShippersView
             {
@@ -29,10 +29,6 @@ namespace tp07.MVC.Controllers
             return View(shippersViews);
         }
 
-        public ActionResult Insert()
-        {
-            return View();
-        }
 
         [HttpPost]
         public ActionResult Insert(ShippersView shippersView)

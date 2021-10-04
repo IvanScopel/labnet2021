@@ -3,6 +3,18 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>@Model</p>
+<div style="text-align:center">
+    <h2>@Model.name.ToUpper()</h2>
+    <img src="@Model.sprite" width="auto" />
+</div>
+
+<div class="col">
+    <h3>Primer habilidad: @Model.firstAbility</h3>
+    <h3>Segunda habilidad: @Model.secondAbility</h3>
+</div>
+<div class="col">
+    <h3>Peso: @Model.weight kg</h3>
+    <h3>Altura: @Model.height mts</h3>
+    
+</div>
