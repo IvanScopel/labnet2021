@@ -10,7 +10,7 @@ using tp08.WebApi.Models;
 
 namespace tp08.WebApi.Controllers
 {
-    
+
     public class ShippersApiController : ApiController
     {
         ShippersLogic shippersLogic = new ShippersLogic();
@@ -19,7 +19,7 @@ namespace tp08.WebApi.Controllers
         [HttpGet]
         public IEnumerable<ShippersDTO> Get()
         {
-            
+
             var Shippers = from s in shippersLogic.GetAll()
                            select new ShippersDTO()
                            {
@@ -29,7 +29,7 @@ namespace tp08.WebApi.Controllers
                            };
 
             return Shippers;
-            
+
         }
 
         [HttpDelete]
@@ -52,12 +52,19 @@ namespace tp08.WebApi.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Insert([FromBody]Shippers shipper)
+        public IHttpActionResult Insert(ShippersDTO shipper)
         {
 
             if (ModelState.IsValid)
             {
-                shippersLogic.Add(shipper);
+
+                Shippers ship = new Shippers
+                {
+                    CompanyName = shipper.CompanyName,
+                    Phone = shipper.Phone,
+                    Orders = null
+                };
+                shippersLogic.Add(ship);
                 return Ok();
             }
             else
@@ -68,6 +75,32 @@ namespace tp08.WebApi.Controllers
 
         }
 
+        [HttpPut]
+        public IHttpActionResult Update(ShippersDTO shipper)
+        {
 
+            if (ModelState.IsValid)
+            {
+
+                Shippers ship = shippersLogic.Search(shipper.ShipperID);
+
+                if (ship != null)
+                {
+                    ship.CompanyName = shipper.CompanyName;
+                    ship.Phone = shipper.Phone;
+                }
+                else
+                {
+                    return NotFound();
+                }
+                shippersLogic.Update(ship);
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
+
+        }
     }
 }
