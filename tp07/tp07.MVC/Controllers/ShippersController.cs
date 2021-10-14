@@ -29,6 +29,10 @@ namespace tp07.MVC.Controllers
             return View(shippersViews);
         }
 
+        public ActionResult Insert()
+        {
+            return View();
+        }
 
         [HttpPost]
         public ActionResult Insert(ShippersView shippersView)
@@ -40,7 +44,7 @@ namespace tp07.MVC.Controllers
                 Phone = shippersView.Phone
             };
 
-            if (shippersView.ShipperID == 0)
+            if (shippersView.ShipperID == default)
             {
 
                 try
@@ -73,7 +77,7 @@ namespace tp07.MVC.Controllers
             }
             
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Shippers");
         }
 
 

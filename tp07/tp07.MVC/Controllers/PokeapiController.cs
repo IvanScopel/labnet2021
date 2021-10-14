@@ -15,7 +15,6 @@ namespace tp07.MVC.Controllers
     public class PokeapiController : Controller
     {
         // GET: Pokeapi
-        ShippersLogic shippersLogic = new ShippersLogic();
 
         PokemonLogic logic = new PokemonLogic();
  

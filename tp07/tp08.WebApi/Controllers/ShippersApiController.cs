@@ -7,10 +7,12 @@ using tp04.Data;
 using tp04.Entities;
 using tp04.Logic;
 using tp08.WebApi.Models;
+using System.Web.Http.Cors;
+
 
 namespace tp08.WebApi.Controllers
 {
-
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class ShippersApiController : ApiController
     {
         ShippersLogic shippersLogic = new ShippersLogic();
