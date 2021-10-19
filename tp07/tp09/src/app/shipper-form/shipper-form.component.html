@@ -1,0 +1,22 @@
+<form class="w-50 justify-content-center  " [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label class="col-form-label">Nombre de la compañia</label>
+    <input formControlName="nombre" id="nombre" type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f.nombre.errors}">
+    <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+      <div *ngIf="getValue('nombre')?.invalid && (getValue('nombre').touched)">Solo admite 40 caracteres</div>
+      <div *ngIf="f.nombre.errors.required">Completa el campo nombre</div>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-form-label">Telefono</label>
+    <input formControlName="telefono" id="telefono" type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f.telefono.errors}">
+    <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+      <div *ngIf="f.telefono.errors.required">Campo telefono es obligatorio</div>
+      <div *ngIf="f.telefono.errors.maxLength">Solo admite 24 caracteres</div>
+    </div>
+  </div>
+  <button type="submit" [disabled]="loading" class="btn btn-primary">Agregar</button>
+</form>
+
+
